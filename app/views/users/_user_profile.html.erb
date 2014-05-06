@@ -1,0 +1,12 @@
+<!-- User profile partial -->
+  <h3 class="profile-text"><%= @user.username %></h3>
+  <% fn = "animals/" + @level.filename%>
+  <%= link_to image_tag(fn, 
+                :class => "avatar", 
+                :size => "150x150", 
+                :style => "display: block; margin-left: auto; margin-right: auto;"),
+                :controller => "pages",
+                :action => "levels" %>
+
+  <h5 class="karma-text"><%= @level.label %></h3>
+  <h5 class="karma-text"> <%= @user.karma.points.ceil %> pts.</h3>

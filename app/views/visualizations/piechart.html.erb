@@ -1,0 +1,137 @@
+<script type="text/javascript" charset="utf-8">
+var curr_selected = "MIL";
+var curr_label = "Miles";
+
+  $(function () {
+     drawChart();
+     $(".pie_selector").change(handleFilter);
+   });
+
+function handleFilter()
+{
+  var selected = $(".pie_selector").val();
+  switch(selected)
+  {
+    case "MIL":
+      curr_label = "Miles";
+      curr_selected = "MIL";
+      break;
+    case "TRP":
+      curr_label = "Trips";
+      curr_selected = "TRP";
+      break;
+    case "EMS":
+      curr_label = "Emissions";
+      curr_selected = "EMS";
+      break;
+    case "MNY":
+      curr_label = "Money";
+      curr_selected = "MNY";
+      break;
+    case "ENG":
+      curr_label = "Energy";
+      curr_selected = "ENG";
+      break;
+  }
+
+  drawChart();
+}
+
+function drawChart()
+{
+   var c_data = $('.chart_data').data('d');
+   var chart = new Highcharts.Chart({ 
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            renderTo: 'pie_chart'
+        },
+        title: {
+        text: 'Pie Chart of ' + curr_label 
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                 }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Savings',
+            //data: [['all',580.0],['walk',3.0],['bike',20.0],['train',200.0],['bus',130.0]]
+            data : (function() {
+              var data_arr = [];
+              var value = 0;
+              var label = "";
+              switch (curr_selected)
+              {
+                case "MIL":
+                 <% @miles_hash.each do |l, v| %>
+                   label = '<%= l %>'
+                   value = <%= v %>
+                   data_arr.push([label, value]);
+                 <% end %>
+                 break;
+                case "TRP":
+                  <% @trips_hash.each do |l, v| %>
+                   label = '<%= l %>'
+                   value = <%= v %>
+                   data_arr.push([label, value]);
+                 <% end %>
+                 break;
+                case "EMS":
+                 <% @emissions_hash.each do |l, v| %>
+                   label = '<%= l %>'
+                   value = <%= v %>
+                   data_arr.push([label, value]);
+                 <% end %>
+                 break;
+                case "MNY":
+                 <% @money_hash.each do |l, v| %>
+                   label = '<%= l %>'
+                   value = <%= v %>
+                   data_arr.push([label, value]);
+                 <% end %>
+                 break;
+                case "ENG":
+                 <% @energy_hash.each do |l, v| %>
+                   label = '<%= l %>'
+                   value = <%= v %>
+                   data_arr.push([label, value])
+                 <% end %>
+                 break;
+              }
+              return data_arr;
+              })()
+          }]
+        });
+   }
+ </script>
+
+<div style="padding-left: 10px;" class="container page_spacing">
+Filter By:
+<select class="pie_selector data-display-menu" style="display: inline;">
+  <option value="MIL" selected> Miles</option>
+  <option value="TRP">Trips</option>
+  <option value="EMS">Emission</option>
+  <option value="MNY">Money</option>
+  <option value="ENG">Energy</option>
+</select>
+</div>
+
+
+<div id="pie_chart" style="width:560px height:300px;">
+</div>
+
+
+

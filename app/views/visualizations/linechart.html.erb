@@ -1,0 +1,77 @@
+<!-- Line Chart -->
+<script type="text/javascript" charset="utf-8">
+$(function (){
+  drawChart();
+});
+
+function drawChart(){
+    var chart = new Highcharts.Chart({
+      chart: {
+        renderTo: 'line_chart'
+      },
+      title: {
+      text: "<%= @category_label %> <%= @data_label %> saved",
+        },
+      xAxis: {
+        categories: (function(){
+             dates = []; 
+             <% @data_hash.each do |l, v| %>
+               // Gets the Day
+              dates.push("<%=l.last(2).to_s%>") 
+             <% end %>
+
+             return dates;
+           })()
+      },
+      yAxis: {
+        title: {
+        text: "<%= @data_label %>"
+        },
+        min: 0
+      },
+      series: [{
+          name: 'saved',
+          data: (function() {
+          values = [];
+           <% @data_hash.each do |l, v| %>
+             values.push(<%=v%>);
+           <% end %>
+
+          return values;
+          })()
+      }]
+  }); 
+}
+</script>
+<div class="spacing">
+<h1 align="center"> <%= @linechart_header %> </h1>
+<div id="line_chart" style="width:560px height:300px;" > </div>
+<%
+    left_html = "<i class='fa fa-arrow-circle-o-left' style='padding:20px;'></i>".html_safe;
+
+    right_html = "<i class='fa fa-arrow-circle-o-right' style='padding:20px;'></i>".html_safe;
+%>
+<%= link_to(left_html, 
+            :controller => "visualizations", 
+            :action => "linechart", 
+            :category_token => @category_token,
+            :data_token => @data_token,
+            :month => @month,
+            :control => "prev")%>
+
+
+<% if @month != Time.now.month %>
+  <div class="pull-right">
+    <%= link_to(right_html, 
+          :controller => "visualizations", 
+          :action => "linechart", 
+          :category_token => @category_token,
+          :data_token => @data_token,
+          :month => @month,
+          :control => "next")%>
+      <% end %>
+    </div>
+  </div>
+
+
+

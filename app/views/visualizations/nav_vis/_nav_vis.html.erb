@@ -1,0 +1,21 @@
+<!-- Visualization Nav Bar -->
+<div class="container">
+<h1>Savings</h1>
+  <select class="viz_selector data-display-menu">
+    <option value="all" selected>Total Savings</option>
+    <option value="walk">By Foot</option>
+    <option value="bike">By Bicycle</option>
+    <option value="train">By TRAX/FrontRunner</option>
+    <option value="bus">By Bus</option>
+  </select>
+</div>
+
+
+<div>
+<%= render 'visualizations/nav_vis/nav_vis_all' %>
+<%= render 'visualizations/nav_vis/nav_vis_walk' %>
+<%= render 'visualizations/nav_vis/nav_vis_bike' %>
+<%= render 'visualizations/nav_vis/nav_vis_bus' %>
+<%= render 'visualizations/nav_vis/nav_vis_train'%>
+</div>
+

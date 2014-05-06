@@ -1,0 +1,46 @@
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 5000
+    });
+  });
+</script>
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag("cloud.jpg") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Sign up now!</h1>
+              <p class="lead" style="color:black;">We need your help to clear the air</p>
+              <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-large btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("city.jpg") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Turn the Tide</h1>
+              <p class="lead">Turn the Tide is focused on promoting pollution free transportation.</p>
+              <%= link_to "About Us", about_path, :class => "btn btn-large btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("lake.jpg") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Help Clear the Air!</h1>
+              <p class="lead" style="color:black;">Set goals towards clearing the air</p>
+              <a class="btn btn-large btn-primary" href="http://cleartheairutah.com/commitments.html">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+

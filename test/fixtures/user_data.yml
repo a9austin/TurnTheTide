@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: user_data
+#
+#  id         :integer          not null, primary key
+#  bike       :decimal(, )
+#  walk       :decimal(, )
+#  bus        :decimal(, )
+#  trax       :decimal(, )
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bike: 9.99
+  walk: 9.99
+  bus: 9.99
+  trax: 9.99
+
+two:
+  bike: 9.99
+  walk: 9.99
+  bus: 9.99
+  trax: 9.99

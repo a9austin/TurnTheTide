@@ -1,0 +1,51 @@
+<!-- For better design if time, create a helper function that will create these link_to blocks -->
+<div class="vizbar train container">
+  <ul class="databar-list">
+    <li>
+    <%= link_to '<i class="fa fa-road"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "TRN",
+                    :data_token => "MIL"} %>
+    <h5><%= @user.total.total_train_miles %> miles</h5> 
+    </li>
+
+    <li>
+    <%= link_to '<i class="fa fa-briefcase"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "TRN",
+                    :data_token => "TRP"} %>
+    <h5><%= @user.total.total_train_trips %> trips</h5> 
+    </li>
+
+    <li>
+    <%= link_to '<i class="fa fa-globe"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "TRN",
+                    :data_token => "EMS"} %>
+    <h5><%= @hash_savings_train["EMS"] %> lbs</h5> 
+    </li>
+
+    <li>
+    <%= link_to '<i class="fa fa-dollar"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "TRN",
+                    :data_token => "MNY"} %>
+    <h5>$<%= @hash_savings_train["MNY"]%></h5> 
+    </li>
+
+    <li>
+    <%= link_to '<i class="fa fa-bolt"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "TRN",
+                    :data_token => "ENG"} %>
+    <h5><%= @hash_savings_train["ENG"]%> kW/h</h5> 
+    </li>
+    <ul>
+</div>
+
+

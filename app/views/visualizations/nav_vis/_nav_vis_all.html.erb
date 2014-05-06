@@ -1,0 +1,44 @@
+<!-- For better design if time, create a helper function that will create these link_to blocks -->
+
+<div class="container vizbar all">
+  <ul class="databar-list">
+    <li><%= link_to '<i class="fa fa-road"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "ALL",
+                    :data_token => "MIL"} %>
+    <h5><%= @user.total.total_miles %> miles</h5> 
+    </li>
+    <li>
+    <%= link_to '<i class="fa fa-briefcase"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "ALL",
+                    :data_token => "TRP"} %>
+    <h5><%= @user.total.total_trips %> trips</h5> 
+    </li>
+    <li>
+    <%= link_to '<i class="fa fa-globe"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "ALL",
+                    :data_token => "EMS"} %>
+    <h5><%= @hash_savings_all["EMS"] %> lbs</h5> 
+    </li>
+    <li>
+    <%= link_to '<i class="fa fa-dollar"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "ALL",
+                    :data_token => "MNY"} %>
+    <h5>$<%= @hash_savings_all["MNY"]%></h5> 
+    </li>
+    <li>
+    <%= link_to '<i class="fa fa-bolt"></i>'.html_safe,
+                   {:controller => "visualizations",
+                    :action => "linechart",
+                    :category_token => "ALL",
+                    :data_token => "ENG"} %>
+    <h5><%= @hash_savings_all["ENG"]%> kW/h</h5> 
+    </li>
+</div>

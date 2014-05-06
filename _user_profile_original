@@ -1,0 +1,13 @@
+<!-- User profile partial -->
+<div class="container">
+  <h3 class="profile-text"><%= @user.username %></h4>
+  <%= image_tag("TattooedJane.png", 
+                :class => "avatar", 
+                :size => "75x75", 
+                :style => "display: block; margin-left: auto; margin-right: auto;") %>
+
+  <!-- Commented out until Karma is ready -->
+  <h5 class="profile-text"><%= @level.label %></h4>
+  <h5 class="profile-text"> <%= @user.karma.points %> pts.</h4>
+  <h5 class="profile-text">Rank: Coming soon..<!--<#%= @user.karma.rank %>--></h4>
+</div>

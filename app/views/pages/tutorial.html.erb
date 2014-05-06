@@ -1,0 +1,174 @@
+<!-- Tutorial Page -->
+<div class="page_spacing">
+  <center>
+    <h1 style="color:white;">How to Use the Android Application</h1>
+    <div class="tutorial-page">
+      <h2 style="color:white;">Registering and Logging In</h2>
+    <div class="tutorial-image">
+      <%= image_tag("tutorial/login.png", :size=>"250x500"); %></div>
+    <p class="tutorial-text">
+      &#149; When first using the application, you will be able to log in or register by using
+      your e-mail and password.  <br><br>
+      &#149; If you already have an account with Turn the Tide, simply log in by pressing the "Sign In" button.  
+      If not, you can register by pressing the "Register" button.</p>
+    </div>
+    <div class="tutorial-page">
+      <h2 style="color:white;">Main Page</h2>
+    <div class="tutorial-image">
+      <%= image_tag("tutorial/main.png", :size=>"250x500"); %></div>
+    <p class="tutorial-text">
+    &#149; Once you are logged in, you will see the main page. <br><br>
+    &#149; Swipe through the transportation selector to choose from a set of modes of transportation. <br><br>
+    &#149; Tap one of the transportation modes to begin tracking using that mode.  The icon will turn green. <br><br>
+    &#149; Tap again to stop tracking that mode of travel.  The icon will revert to blue.<br><br>
+    &#149; As you track your mileage, the values at the top of the screen will update with the current trip's accumulated mileage
+    based on your mode of transportation.<br><br>
+    &#149; Remember to tap the sync button when you reach your destination to end the trip and send data to our server.  If you begin tracking another mode of transportation,
+    it will begin a new trip.</p>
+    <h3 style="color:white;">Buttons</h3>
+    <table class="button-table">
+      <tr>
+        <td>Walk Mode</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/walk_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this mode to start tracking your walking mileage.</td>
+      </tr>
+      <tr>
+        <td>Bike Mode</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/bike_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this mode to start tracking your biking mileage.</td>
+      </tr>
+      <tr>
+        <td>Bus Mode</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/bus_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this mode to start tracking your bus mileage.</td>
+      </tr>
+      <tr>
+        <td>Train Mode</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/train_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this mode to start tracking your train mileage, whether by TRAX or FrontRunner.</td>
+      </tr>
+      <tr>
+        <td>Car Mode</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/car_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this mode to start tracking your car mileage.</td>
+      </tr>
+      <tr>
+        <td>Map</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/map_blue_button.png", :size=>"50x50"); %></td>
+        <td>Select this to open up the map feature of the application.  See "Map" below for more details.</td>
+      </tr>
+      <tr>
+        <td>Air Quality</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/good_aq.png", :size=>"50x50"); %></td>
+        <td>Select this to view the air quality message for today.  See "Air Quality" below for more details.</td>
+      </tr>
+      <tr>
+        <td>Sync Data</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/sync_button.png", :size=>"50x50"); %></td>
+        <td>Select this to sync your tracking data to our server and update your savings.  Use this button only
+            you have reached your destination.</td>
+      </tr>
+      <tr>
+        <td>Savings Page</td>
+        <td style="padding:5px;"><%= image_tag("tutorial/data_view_button.png", :size=>"50x50"); %></td>
+        <td>Select this to view your current Karma points and savings.  See "Savings" below for more details.</td>
+      </tr>
+    </table>
+  </div>
+  <div class="tutorial-page">
+    <h2 style="color:white;">Map</h2>
+    <div class="tutorial-image">
+      <%= image_tag("tutorial/map.png", :size=>"250x500"); %></div>
+    <p class="tutorial-text">
+    &#149; The map feature allows finding a route between two points using alternative modes of transport.<br><br>
+    &#149; When a route is found, tap on a pin to view further details on what to do at that location.  Instructions
+    will include what mode of transport to use, bus and train numbers, distance, and approximate travel time.<br><br>
+    &#149; At the top of the map are two entries where you may input a starting and destination point for route finding. Tap the magnifying glass
+    to see if a route is available.<br><br>
+    &#149; Please use specific addresses of the locations you are searching for whenever possible.<br><br>
+    &#149; If a route or destination cannot be found, a message will pop up.  Again, please use specific addresses if possible
+    to avoid this.<br><br>
+    &#149; Note: The map will not find routes that require you to drive a car.</p>
+  </div>
+  <div class="tutorial-page">
+    <h2 style="color:white;">Air Quality</h2>
+    <p class="tutorial-text">
+    &#149; Air quality categories, descriptions, and their color-coded values are provided by the API of <a href="http://airnow.gov/index.cfm?action=airnow.local_state&stateid=46&mapcenter=0&tabs=0">AirNow</a>.<br><br>
+    &#149; The air quality icon will change colors according to the air quality category dictated by AirNow for the current day.<br><br></p>
+    <h3 style="color:white;">Categories</h3>
+    <table>
+      <tr>
+        <td>Good</td>
+        <td><%= image_tag("tutorial/good_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#00CC00;font-size:50px;"></div>
+        <td>Air quality is considered satisfactory, and air pollution poses little or no risk</td>
+      </tr>
+      <tr>
+        <td>Moderate</td>
+        <td><%= image_tag("tutorial/moderate_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#FFFF00;font-size:50px;"></div>
+        <td>Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution.</td>
+      </tr>
+      <tr>
+        <td>Unhealthy for Sensitive Groups</td>
+        <td><%= image_tag("tutorial/usg_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#FF6600;font-size:50px;"></div>
+        <td>Members of sensitive groups may experience health effects. The general public is not likely to be affected.</td>
+      </tr>
+      <tr>
+        <td>Unhealthy</td>
+        <td><%= image_tag("tutorial/unhealthy_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#FF0000;font-size:50px;"></div>
+        <td>Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects.</td>
+      </tr>
+      <tr>
+        <td>Very Unhealthy</td>
+        <td><%= image_tag("tutorial/very_unhealthy_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#99004C;font-size:50px;"></div>
+        <td>Health warnings of emergency conditions. The entire population is more likely to be affected.</td>
+      </tr>
+      <tr>
+        <td>Hazardous</td>
+        <td><%= image_tag("tutorial/hazardous_aq.png", :size=>"50x50"); %><i class="fa fa-cloud" style="color:#7E0023;font-size:50px;"></div>
+        <td>Health alert: everyone may experience more serious health effects.</td>
+      </tr>
+    </table>
+  </div>
+  <div class="tutorial-page">
+    <h2 style="color:white;">Savings</h2>
+    <div class="tutorial-image">
+      <%= image_tag("tutorial/savings.png", :size=>"250x500"); %>
+    </div>
+    <p class="tutorial-text">
+    &#149; View your karma points and savings based on the miles you have traveled and the modes of transportation you have used.<br><br>
+    &#149; Note: Mileage traveled by car does not count towards these savings.
+    </p>
+    <h3 style="color:white;">Categories</h3>
+    <table>
+      <tr>
+        <td>Mileage Traveled</td>
+        <td><%= image_tag("tutorial/milesicon.png", :size=>"50x50"); %></td>
+        <td>Total miles traveled using this application.</td>
+      </tr>
+      <tr>
+        <td>Trips Saved</td>
+        <td><%= image_tag("tutorial/tripsicon.png", :size=>"50x50"); %></td>
+        <td>Total trips saved without driving a car.</td>
+      </tr>
+      <tr>
+        <td>Emissions Saved</td>
+        <td><%= image_tag("tutorial/emissionsicon.png", :size=>"50x50"); %></td>
+        <td>Total emissions saved without driving a car, in units of pounds.  Algorithms are based on the the Wasatch Front Region Council's Vehicle Emissions Calculator figuring CO, NOx, VOC, PM2.5 and PM10.</td>
+      </tr>
+      <tr>
+        <td>Money Saved</td>
+        <td><%= image_tag("tutorial/moneyicon.png", :size=>"50x50"); %></td>
+        <td>Total dollars saved without driving a car, calculated by $0.61 per mile traveled.  Based on AAA's report, "Your Driving Costs" for 2013, for a medium-sized sedan traveling 15,000 miles a year. </td>
+      </tr>
+      <tr>
+        <td>Energy Saved</td>
+        <td><%= image_tag("tutorial/energyicon.png", :size=>"50x50"); %></td>
+        <td>Total energy saved without driving a car, calculated by 0.04545 gallons of gas per mile traveled.  Based on an average 22-mpg vehicle.</td>
+      </tr>
+    </table>
+  </div>
+  </center>
+
+</div>
+
+  

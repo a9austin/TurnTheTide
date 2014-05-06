@@ -1,0 +1,70 @@
+<!-- User Show (User Homepage) -->
+<% javascript 'users.js.coffee'%>
+<div class="pg1" id="pg1">
+  <div class="background_container container-fluid">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span4 aq-container pg1-container container">
+          <%= render 'users/airquality'%>
+        </div>
+        <div class="span4 profile-container pg1-container container">
+          <%= render 'users/user_profile' %>
+        </div>
+        <div class="span4 tweet-container pg1-container container">
+          <%= render 'users/tweet' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="anchor-spacing" id="pg1-bottom">
+    <center>
+      <a href="#pg2">
+        <div><p class="link-text">View Savings</p>
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </a>
+    </center>
+  </div>
+</div>
+<div class="pg2" id="pg2">
+  <div class="background_container">
+    <div class="anchor-spacing" id="pg2-top">
+      <center>
+        <a href="#pg1">
+          <div><i class="fa fa-angle-up"></i>
+            <p class="link-text">Back to Top</p>
+          </div>
+        </a>
+      </center>
+    </div>
+    <div class="viznav-container">
+      <%= render 'visualizations/nav_vis/nav_vis' %>
+    </div>
+    <div class="anchor-spacing" id="pg2-bottom">
+      <center>
+        <a href="#pg3">
+          <div><p class="link-text">View Pie Chart</p>
+            <i class="fa fa-angle-down"></i>
+          </div>
+        </a>
+      </center>
+    </div>
+  </div>
+</div>
+<div class="pg3" id="pg3">
+  <div class="anchor-spacing" id="pg3-top">
+    <center>
+        <a href="#pg2">
+          <div><i class="fa fa-angle-up"></i>
+            <p class="link-text">View Savings</p>
+          </div>
+        </a>
+      </center>
+  </div>
+  <div class="background_container">
+    <%= render 'users/piechart' %>
+  </div>
+</div>
+
+
+
